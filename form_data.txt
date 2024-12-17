@@ -1,0 +1,14 @@
+Name: d, Email: shallievaflvera02@gmail.com
+Name: вера, Email: shallievaflvera02@gmail.com, Room: delux_room, Number of Rooms: 3, Number of Guests: 3, Dates: 01 Dec-24    to   08 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: v, Email: a@gmail.com, Room: luxury, Number of Rooms: 1, Number of Guests: 1, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 2, Number of Guests: 2, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 1, Number of Guests: 1, Dates: 17 Dec-24    to   17 Dec-24
+Name: John Doe, Email: john.doe@example.com, Room: luxury, Number of Rooms: 1, Number of Guests: 1, Dates: 17 Dec-24    to   17 Dec-24
+Name: роман, Email: shallievaflvera02@gmail.com, Room: premier, Number of Rooms: 2, Number of Guests: 3, Dates: 20 Dec-24    to   27 Dec-24

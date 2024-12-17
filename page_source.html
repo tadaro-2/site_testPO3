@@ -1,0 +1,127 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Magestic Hotel</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/pickmeup.min.js"></script>
+    <script type="text/javascript" src="dist/handleCounter.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/pickmeup.css">
+    <link rel="stylesheet" type="text/css" href="css/handle-counter.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="dist/jquery.scrollUp.js"></script>
+    <script type="text/javascript" src="dist/demo.js"></script>
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="tm-header">
+        <img class="tm-logo" src="images/Majestic_Hotel_hd.png" alt="Majestic Hotel">
+        <nav class="tm-nav">
+            <div>
+                <ul>
+                    <li class="tm-list"><a href="index.html">Home</a></li>
+                    <li class="tm-list"><a href="explore.html">Explore</a></li>
+                    <li class="tm-list"><a href="rooms.html">Rooms</a></li>
+                    <li class="tm-list"><a href="bb.html">Booking</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>    
+            </div>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <section class="tm-main">
+        <p>Booking</p>
+    </section>
+
+    <!-- Форма бронирования -->
+    <section class="tm-booking">
+        <form id="bookingForm" action="process_form.php" method="POST">
+            <div class="tm-form1">
+                <input type="text" name="name" placeholder="Name" required="">
+                <input type="email" name="email" placeholder="E-mail" required="">
+                <label for="rooms" id="inlinelable">Rooms</label>
+                <select name="room" id="rooms" required="">
+                    <option value="luxury">Luxury Suite</option>
+                    <option value="delux">Deluxe Suite</option>
+                    <option value="premier">Premier Suite</option>
+                    <option value="luxury_room">Luxury Room</option>
+                    <option value="delux_room">Deluxe Room</option>
+                    <option value="premier_room">Premier Room</option>
+                </select>
+                
+                <div class="tm-num1" id="handleCounter1">
+                    <label for="number1">Number of Rooms</label><br>
+                    <button type="button" class="counter-minus btn btn-primary" disabled="">-</button>
+                    <input type="text" name="number_of_rooms" id="number1" value="1" required="" data-num="1">
+                    <button type="button" class="counter-plus btn btn-primary">+</button>
+                </div>
+
+                <div class="tm-num2" id="handleCounter2">
+                    <label for="number2">Number of Guests</label><br>
+                    <button type="button" class="counter-minus btn btn-primary" disabled="">-</button>
+                    <input type="text" name="number_of_guests" id="number2" value="1" required="" data-num="1">
+                    <button type="button" class="counter-plus btn btn-primary">+</button>
+                </div>
+
+                <div class="tm-cl">
+                    <label for="date1" class="arrival">Visiting Dates from Arrival to Departure</label>
+                    <input type="text" name="dates" class="range" readonly="readonly" required="">
+                    <input type="submit" id="sub" value="Proceed">
+                </div>
+            </div>
+        </form>
+        <!-- Место для отображения ответа сервера -->
+        <div id="server-response"></div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="tm-footer">
+        <div class="tm-us">
+            <p class="bold">About Us</p>
+            <p>We are a part of chain of luxury hotels 
+                which extends all over the world. We 
+                provide a luxurious stay with various value
+                added and free services which will make
+                you visit us over and over again.</p>    
+        </div>
+        <div class="tm-address">
+            <p class="bold">Address</p>
+            <p>415, Park Avenu, Hawai<br>
+                Phone: (211) 9275693451<br>
+                Email: majestic@info.com</p>    
+        </div>
+        <br>
+        <div class="tm-media">
+            <a href="#"> <img src="images/fb.png"></a>
+            <a href="#"> <img src="images/G.png"> </a>
+            <a href="#"> <img src="images/twittr.png"> </a>
+            <a href="#">  <img src="images/insta.png"> </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript для AJAX -->
+    <script>
+    $(document).ready(function() {
+        $('#bookingForm').on('submit', function(e) {
+            e.preventDefault(); // Предотвращаем перезагрузку страницы
+            var formData = $(this).serialize(); // Сериализуем данные формы
+
+            $.ajax({
+                type: 'POST',
+                url: 'process_form.php',
+                data: formData,
+                success: function(response) {
+                    $('#server-response').html('<p style="color:green;">' + response + '</p>');
+                    $('#bookingForm')[0].reset(); // Очистка формы после успешной отправки
+                },
+                error: function() {
+                    $('#server-response').html('<p style="color:red;">An error occurred. Please try again.</p>');
+                }
+            });
+        });
+    });
+    </script>
+
+
+<div class="pickmeup pmu-view-days pmu-hidden"><div class="pmu-instance"><nav><div class="pmu-prev pmu-button" style="visibility: visible;">◀</div><div class="pmu-month pmu-button">December, 2024</div><div class="pmu-next pmu-button" style="visibility: visible;">▶</div></nav><nav class="pmu-day-of-week"><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div><div>Su</div></nav><div class="pmu-years"><div class="pmu-button">2018</div><div class="pmu-button">2019</div><div class="pmu-button">2020</div><div class="pmu-button">2021</div><div class="pmu-button">2022</div><div class="pmu-button">2023</div><div class="pmu-selected pmu-button">2024</div><div class="pmu-button">2025</div><div class="pmu-button">2026</div><div class="pmu-button">2027</div><div class="pmu-button">2028</div><div class="pmu-button">2029</div></div><div class="pmu-months"><div class="pmu-button">Jan</div><div class="pmu-button">Feb</div><div class="pmu-button">Mar</div><div class="pmu-button">Apr</div><div class="pmu-button">May</div><div class="pmu-button">Jun</div><div class="pmu-button">Jul</div><div class="pmu-button">Aug</div><div class="pmu-button">Sep</div><div class="pmu-button">Oct</div><div class="pmu-button">Nov</div><div class="pmu-selected pmu-button">Dec</div></div><div class="pmu-days"><div class="pmu-not-in-month pmu-button">25</div><div class="pmu-not-in-month pmu-button">26</div><div class="pmu-not-in-month pmu-button">27</div><div class="pmu-not-in-month pmu-button">28</div><div class="pmu-not-in-month pmu-button">29</div><div class="pmu-not-in-month pmu-saturday pmu-button">30</div><div class="pmu-sunday pmu-button">1</div><div class="pmu-button">2</div><div class="pmu-button">3</div><div class="pmu-button">4</div><div class="pmu-button">5</div><div class="pmu-button">6</div><div class="pmu-saturday pmu-button">7</div><div class="pmu-sunday pmu-button">8</div><div class="pmu-button">9</div><div class="pmu-button">10</div><div class="pmu-button">11</div><div class="pmu-button">12</div><div class="pmu-button">13</div><div class="pmu-saturday pmu-button">14</div><div class="pmu-sunday pmu-button">15</div><div class="pmu-button">16</div><div class="pmu-selected pmu-today pmu-button">17</div><div class="pmu-button">18</div><div class="pmu-button">19</div><div class="pmu-button">20</div><div class="pmu-saturday pmu-button">21</div><div class="pmu-sunday pmu-button">22</div><div class="pmu-button">23</div><div class="pmu-button">24</div><div class="pmu-button">25</div><div class="pmu-button">26</div><div class="pmu-button">27</div><div class="pmu-saturday pmu-button">28</div><div class="pmu-sunday pmu-button">29</div><div class="pmu-button">30</div><div class="pmu-button">31</div><div class="pmu-not-in-month pmu-button">1</div><div class="pmu-not-in-month pmu-button">2</div><div class="pmu-not-in-month pmu-button">3</div><div class="pmu-not-in-month pmu-saturday pmu-button">4</div><div class="pmu-not-in-month pmu-sunday pmu-button">5</div></div></div></div><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;">^</a></body></html>
